@@ -1,8 +1,40 @@
+# Allow direct access to admin, landing, thankyou, tos, js, and 404 folders
+RewriteEngine On
+
+# Don't process admin folder through index.php
+RewriteCond %{REQUEST_URI} ^/admin
+RewriteRule ^(.*)$ - [L]
+
+# Don't process landing folder through index.php
+RewriteCond %{REQUEST_URI} ^/landing
+RewriteRule ^(.*)$ - [L]
+
+# Don't process thankyou folder through index.php
+RewriteCond %{REQUEST_URI} ^/thankyou
+RewriteRule ^(.*)$ - [L]
+
+# Don't process tos folder through index.php
+RewriteCond %{REQUEST_URI} ^/tos
+RewriteRule ^(.*)$ - [L]
+
+# Don't process js folder through index.php
+RewriteCond %{REQUEST_URI} ^/js
+RewriteRule ^(.*)$ - [L]
+
+# Don't process 404 folder through index.php
+RewriteCond %{REQUEST_URI} ^/404
+RewriteRule ^(.*)$ - [L]
+
+# Error document for 404
 ErrorDocument 404 /404/index.php
+
+# Protect settings.json
 <Files "settings.json">  
   Order Allow,Deny
   Deny from all
 </Files>
-php_flag  display_errors 1
-php_flag  display_startup_errors 1
-php_value  error_reporting 2047
+
+# PHP settings
+php_flag  display_errors 0
+php_flag  display_startup_errors 0
+php_value  error_reporting 22527

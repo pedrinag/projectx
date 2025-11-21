@@ -5,6 +5,8 @@ ini_set('display_startup_errors', 0);
 error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
 //Конец включения отладочной информации
 
+// This check is now handled by router.php
+
 require_once 'core.php';
 require_once 'settings.php';
 require_once 'db.php';
