@@ -1,0 +1,21 @@
+# Redirect all requests to index.php for SPA-like routing
+/*    /index.php    200
+
+# Handle 404 errors
+/404/*    /404/index.php    200
+
+# Admin routes
+/admin/*    /admin/index.php    200
+
+# JS processing routes
+/js/*    /js/index.php    200
+
+# Landing routes
+/landing    /landing.php    200
+
+# Thank you routes
+/thankyou/*    /thankyou/thankyou.php    200
+
+# TOS routes
+/tos/*    /tos/index.php    200
+

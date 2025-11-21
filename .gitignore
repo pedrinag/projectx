@@ -357,3 +357,4 @@ healthchecksdb
 /clicks.db
 /clicks.db-shm
 /clicks.db-wal
+.vercel

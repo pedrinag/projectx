@@ -1,0 +1,26 @@
+[build]
+  publish = "."
+  command = "echo 'No build step required for PHP application'"
+
+[build.environment]
+  PHP_VERSION = "8.1"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.php"
+  status = 200
+  force = false
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/settings.json"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
